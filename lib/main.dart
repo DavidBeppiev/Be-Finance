@@ -6,19 +6,24 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-  runApp(
-      EasyLocalization(
-          path: 'assets/translations',
-          supportedLocales: const [
-            Locale('en'),
-            Locale('de'),
-            Locale('ru'),
-          ],
-          fallbackLocale: const Locale('en'),
-          assetLoader: const CodegenLoader(),
-          startLocale: const Locale('ru'),
+  runApp(EasyLocalization(
+      path: 'assets/translations',
+      supportedLocales: const [
+        Locale('en'),
+        Locale('de'),
+        Locale('ru'),
+      ],
+      fallbackLocale: const Locale('en'),
+      assetLoader: const CodegenLoader(),
+      startLocale: const Locale('ru'),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<LanguageBloc>(create:(context)=>LanguageBloc()/*..add(GetStartPageEvent()))*/),
+        ],
           child: const MyApp()
-  ));
+      )
+  )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -27,6 +32,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return MaterialApp(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
@@ -34,7 +45,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const InitialPage(),
+      home: InitialPage(),
     );
   }
 }
