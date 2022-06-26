@@ -1,29 +1,13 @@
+import 'package:be_finance_app/bloc/providers.dart';
+import 'package:be_finance_app/bloc/locale_cubit/locale_cubit.dart';
+import 'package:be_finance_app/localizations/app_localizations_setup.dart';
+import 'package:be_finance_app/ui/pages/initial_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:be_finance_app/all.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
-
-  runApp(EasyLocalization(
-      path: 'assets/translations',
-      supportedLocales: const [
-        Locale('en'),
-        Locale('de'),
-        Locale('ru'),
-      ],
-      fallbackLocale: const Locale('en'),
-      assetLoader: const CodegenLoader(),
-      startLocale: const Locale('ru'),
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider<LanguageBloc>(create:(context)=>LanguageBloc()/*..add(GetStartPageEvent()))*/),
-        ],
-          child: const MyApp()
-      )
-  )
-  );
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -38,14 +22,19 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return MaterialApp(
-      supportedLocales: context.supportedLocales,
-      localizationsDelegates: context.localizationDelegates,
-      locale: context.locale,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiBlocProvider(
+      providers: BlocProviders.providers,
+      child: BlocBuilder<LocaleCubit, LocaleState>(
+        buildWhen: (previousState, currentState) => previousState != currentState,
+        builder: (_, localeState) {
+          return MaterialApp(
+          supportedLocales: AppLocalizationsSetup.supportedLocales,
+          localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
+          locale: localeState.locale,
+          home: InitialPage(),
+          );
+        }
       ),
-      home: InitialPage(),
     );
   }
 }

@@ -1,10 +1,7 @@
 import 'dart:ui';
 
-import 'package:be_finance_app/translations/locale_keys.g.dart';
-import 'package:be_finance_app/ui/screens/login_screen.dart';
+import 'package:be_finance_app/ui/views/initial%20view/login_view.dart';
 import 'package:flutter/material.dart';
-
-import 'package:be_finance_app/all.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({Key? key}) : super(key: key);
@@ -12,7 +9,7 @@ class InitialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LoginScreen()
+      body: LoginView()
       // Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
