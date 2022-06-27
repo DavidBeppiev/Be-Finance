@@ -1,12 +1,12 @@
 import 'package:be_finance_app/data/constants/colors.dart';
 import 'package:be_finance_app/data/constants/text_styles.dart';
-import 'package:be_finance_app/ui/views/initial%20view/login_view.dart';
+import 'package:be_finance_app/ui/pages/auth_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   String text;
-
-  CustomButton(@required this.text, {Key? key}) : super(key: key);
+  Function() fun;
+  CustomButton(@required this.text, @required this.fun, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
+          fun();
         },
         child: Center(
           child: Text(text, style: AllStyles.secondaryStyle),

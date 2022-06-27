@@ -17,6 +17,7 @@ Widget DropDownMenuWidget(BuildContext context) {
   return SizedBox(
     child: DropdownButtonFormField(
       isExpanded: false,
+      isDense: false,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(_borderRadius)),

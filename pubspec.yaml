@@ -33,12 +33,15 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: Main
+    - family: Numbers
       fonts:
-        - asset: assets/fonts/main-pobeda.ttf
-    - family: Secondary
+        - asset: assets/fonts/numbers.ttf
+    - family:
       fonts:
         - asset: assets/fonts/secondary.ttf
     - family: Tagline
       fonts:
         - asset: assets/fonts/tagline.ttf
+    - family: Main
+      fonts:
+        - asset: assets/fonts/fjalla-main.ttf
