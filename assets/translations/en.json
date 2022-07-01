@@ -1,9 +1,16 @@
 {
   "country_name": "English",
   "change_language": "Change the language",
+
   "further_title": "Next",
+  "back_title": "Back",
+
   "hello_title" : "Welcome to BeFinance!",
   "about_app" : "Our app makes it easier for people to work with their financial means. Set goals, manage finances smarter, follow the schedules of expenses and income. We are glad that you are with us now!",
+
   "name_input_text": "Name",
-  "password_input_text": "Password"
+  "password_input_text": "Password",
+  "confirm_password_input_text": "Confirm your password",
+  "chek_registration_text": "Don't you have an account yet?",
+  "registration_text": "Register"
 }

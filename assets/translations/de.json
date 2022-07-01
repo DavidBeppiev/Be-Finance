@@ -1,9 +1,16 @@
 {
   "country_name": "Deutsch",
   "change_language": "Sprache ändern",
+
   "further_title": "Weiter",
+  "back_title": "Zurück",
+
   "hello_title" : "Willkommen bei Belfinance!",
   "about_app" : "Unsere App erleichtert es den Menschen, mit ihren finanziellen Mitteln zu arbeiten. Setzen Sie sich Ziele, verwalten Sie Ihre Finanzen intelligenter, achten Sie auf Ausgaben und Einnahmen. Wir sind froh, dass du jetzt bei uns bist!",
+
   "name_input_text": "Name",
-  "password_input_text": "Passwort"
+  "password_input_text": "Passwort",
+  "confirm_password_input_text": "Bestätigen Sie Ihr Passwort",
+  "chek_registration_text": "Haben Sie noch kein Account?",
+  "registration_text": "Registrieren"
 }

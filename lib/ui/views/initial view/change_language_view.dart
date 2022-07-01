@@ -26,7 +26,7 @@ class ChangeLanguageView extends StatelessWidget {
             Container(margin: const EdgeInsets.only(top: 14), child: DropDownMenuWidget(context)),
             CustomButton(AppLocalizations.of(context)!.translate('further_title')!.toUpperCase(),
                 () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AuthPage()));
             })
           ],
         ),

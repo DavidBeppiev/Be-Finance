@@ -1,9 +1,20 @@
 {
   "country_name": "Русский",
   "change_language": "Смените язык",
+
+
   "further_title": "Далее",
+  "back_title": "Назад",
+
   "hello_title": "Добро пожаловать в BeFinance!",
   "about_app": "Наше приложение облегчает людям работу, с их финансовыми средствами. Ставь цели, распоряжайся финансами умнее, следи за графиками расходов и доходов. Мы рады, что ты теперь с нами!",
+
+
   "name_input_text": "Имя",
-  "password_input_text": "Пароль"
+  "password_input_text": "Пароль",
+  "confirm_password_input_text": "Подтвердите пароль",
+  "chek_registration_text": "У вас ещё нет аккаунта?",
+  "registration_text": "Зарегестрироваться",
+
+
 }
