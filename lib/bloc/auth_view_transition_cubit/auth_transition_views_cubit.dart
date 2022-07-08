@@ -10,8 +10,4 @@ class AuthTransitionViewsCubit extends Cubit<AuthTransitionViewsState> {
     emit(AuthTransitionViewsRegistration());
   }
 
-  void toLogin () {
-    emit(AuthTransitionViewsLogin());
-  }
-
 }

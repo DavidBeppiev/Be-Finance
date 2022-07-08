@@ -12,5 +12,6 @@
   "password_input_text": "Пароль",
   "confirm_password_input_text": "Подтвердите пароль",
   "chek_registration_text": "У вас ещё нет аккаунта?",
-  "registration_text": "Зарегестрироваться"
+  "registration_text": "Зарегестрироваться",
+  "login_text": "Войти"
 }

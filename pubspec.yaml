@@ -36,12 +36,9 @@ flutter:
     - family: Numbers
       fonts:
         - asset: assets/fonts/numbers.ttf
-    - family:
-      fonts:
-        - asset: assets/fonts/secondary.ttf
     - family: Tagline
       fonts:
         - asset: assets/fonts/tagline.ttf
     - family: Main
       fonts:
-        - asset: assets/fonts/fjalla-main.ttf
+        - asset: assets/fonts/nanito.ttf

@@ -17,23 +17,22 @@ class AuthPage extends StatelessWidget {
         },
         child: Scaffold(
             body: Center(
-              child: SingleChildScrollView(
-                child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/images/logo_transparent.png',
-                      ),
-                      BlocBuilder<AuthTransitionViewsCubit, AuthTransitionViewsState>(
-                        builder: (context, state) {
-                          if(state is AuthTransitionViewsRegistration)
-                            return RegistrationView();
-                          if(state is AuthTransitionViewsLogin)
-                            return LoginView();
-                          else return SizedBox.shrink();
-                        },
-                      )
-                    ]),
+          child: SingleChildScrollView(
+            child: Column(children: [
+              Image.asset(
+                'assets/images/logo_transparent.png',
               ),
-            )));
+              BlocListener<AuthTransitionViewsCubit, AuthTransitionViewsState>(
+                listener: (context, state) {
+                  if (state is AuthTransitionViewsRegistration) {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => RegistrationView()));
+                  }
+                },
+                child: LoginView(),
+              )
+            ]),
+          ),
+        )));
   }
 }

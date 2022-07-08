@@ -12,5 +12,6 @@
   "password_input_text": "Password",
   "confirm_password_input_text": "Confirm your password",
   "chek_registration_text": "Don't you have an account yet?",
-  "registration_text": "Register"
+  "registration_text": "Register",
+  "login_text": "Login"
 }

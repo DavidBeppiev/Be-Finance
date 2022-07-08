@@ -1,6 +1,7 @@
 import 'package:be_finance_app/bloc/auth_view_transition_cubit/auth_transition_views_cubit.dart';
 import 'package:be_finance_app/data/constants/text_styles.dart';
 import 'package:be_finance_app/localizations/app_localizations.dart';
+import 'package:be_finance_app/ui/widgets/custom%20widgets/custom_button.dart';
 import 'package:be_finance_app/ui/widgets/input_widgets/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,15 +16,23 @@ class LoginView extends StatelessWidget {
         Column(
           children: [
             CustomTextFormField(
-                AppLocalizations.of(context)!.translate('name_input_text')!.toUpperCase(),
+                AppLocalizations.of(context)!.translate('name_input_text')!,
                 Icons.person),
             CustomTextFormField(
-                AppLocalizations.of(context)!.translate('password_input_text')!.toUpperCase(),
+                AppLocalizations.of(context)!.translate('password_input_text')!,
                 Icons.key),
+            SizedBox(height: 13,),
+            Container(
+              padding: const EdgeInsets.only(top: 10, left: 25, right: 25),
+              child: CustomButton(
+                  AppLocalizations.of(context)!.translate('login_text')!.toUpperCase(), () {}
+              ),
+            ),
           ],
         ),
         SizedBox(height: 32,),
-        Row(
+        Divider(),
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
