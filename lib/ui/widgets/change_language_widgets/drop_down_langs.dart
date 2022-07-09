@@ -47,7 +47,7 @@ Widget DropDownMenuWidget(BuildContext context) {
             BlocProvider.of<LocaleCubit>(context).toDe();
             break;
           default:
-            BlocProvider.of<LocaleCubit>(context).toDe();
+            BlocProvider.of<LocaleCubit>(context).toEn();
         }
       },
       value: AppLocalizations.of(context)!.translate('country_name')!,

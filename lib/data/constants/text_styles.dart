@@ -19,7 +19,6 @@ abstract class AllStyles {
 
   static const TextStyle inputHelperStyle = TextStyle(
     fontSize: 18,
-    // fontWeight: FontWeight.bold,
     color: AllColors.secondaryColor,
     fontFamily: 'Main'
   );

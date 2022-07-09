@@ -3,8 +3,8 @@ import 'package:meta/meta.dart';
 
 part 'auth_transition_views_state.dart';
 
-class AuthTransitionViewsCubit extends Cubit<AuthTransitionViewsState> {
-  AuthTransitionViewsCubit() : super(AuthTransitionViewsLogin());
+class AuthNavigationViewsCubit extends Cubit<AuthNavigationViewsState> {
+  AuthNavigationViewsCubit() : super(AuthTransitionViewsLogin());
 
   void toRegister () {
     emit(AuthTransitionViewsRegistration());

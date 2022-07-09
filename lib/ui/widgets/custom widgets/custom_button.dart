@@ -1,12 +1,11 @@
 import 'package:be_finance_app/data/constants/colors.dart';
 import 'package:be_finance_app/data/constants/text_styles.dart';
-import 'package:be_finance_app/ui/pages/auth_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   String text;
   Function() fun;
-  CustomButton(@required this.text, @required this.fun, {Key? key}) : super(key: key);
+  CustomButton(this.text, this.fun, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,7 @@
-import 'package:be_finance_app/bloc/auth_view_transition_cubit/auth_transition_views_cubit.dart';
+import 'package:be_finance_app/bloc/Initial_page_cubit/initial_page_cubit.dart';
+import 'package:be_finance_app/bloc/auth_view_navigation_cubit/auth_transition_views_cubit.dart';
 import 'package:be_finance_app/localizations/app_localizations.dart';
+import 'package:be_finance_app/ui/pages/main_page.dart';
 import 'package:be_finance_app/ui/views/auth%20views/login_view.dart';
 import 'package:be_finance_app/ui/views/auth%20views/registration_view.dart';
 import 'package:be_finance_app/ui/widgets/input_widgets/text_form_field_widget.dart';
@@ -15,24 +17,33 @@ class AuthPage extends StatelessWidget {
         onTap: () {
           FocusScope.of(context).unfocus();
         },
-        child: Scaffold(
-            body: Center(
-          child: SingleChildScrollView(
-            child: Column(children: [
-              Image.asset(
-                'assets/images/logo_transparent.png',
-              ),
-              BlocListener<AuthTransitionViewsCubit, AuthTransitionViewsState>(
-                listener: (context, state) {
-                  if (state is AuthTransitionViewsRegistration) {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => RegistrationView()));
-                  }
-                },
-                child: LoginView(),
-              )
-            ]),
-          ),
-        )));
+        child: BlocListener<InitialPageCubit, InitialPageState>(
+          listener: (context, state) {
+            if (state is MainPageState)
+              {
+                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
+                    MainPage()), (Route<dynamic> route) => false);
+              }
+          },
+          child: Scaffold(
+              body: Center(
+                child: SingleChildScrollView(
+                  child: Column(children: [
+                    Image.asset(
+                      'assets/images/logo_transparent.png',
+                    ),
+                    BlocListener<AuthNavigationViewsCubit, AuthNavigationViewsState>(
+                      listener: (context, state) {
+                        if (state is AuthTransitionViewsRegistration) {
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => RegistrationView()));
+                        }
+                      },
+                      child: LoginView(),
+                    )
+                  ]),
+                ),
+              )),
+        ));
   }
 }

@@ -1,5 +1,6 @@
-import 'package:be_finance_app/bloc/auth_view_transition_cubit/auth_transition_views_cubit.dart';
+import 'package:be_finance_app/bloc/Initial_page_cubit/initial_page_cubit.dart';
 import 'package:be_finance_app/data/constants/text_styles.dart';
+import 'package:be_finance_app/bloc/auth_view_navigation_cubit/auth_transition_views_cubit.dart';
 import 'package:be_finance_app/localizations/app_localizations.dart';
 import 'package:be_finance_app/ui/widgets/custom%20widgets/custom_button.dart';
 import 'package:be_finance_app/ui/widgets/input_widgets/text_form_field_widget.dart';
@@ -25,7 +26,9 @@ class LoginView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.only(top: 10, left: 25, right: 25),
               child: CustomButton(
-                  AppLocalizations.of(context)!.translate('login_text')!.toUpperCase(), () {}
+                  AppLocalizations.of(context)!.translate('login_text')!.toUpperCase(), () {
+                BlocProvider.of<InitialPageCubit>(context).goToMainPage();
+              }
               ),
             ),
           ],
@@ -41,7 +44,7 @@ class LoginView extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                BlocProvider.of<AuthTransitionViewsCubit>(context).toRegister();
+                BlocProvider.of<AuthNavigationViewsCubit>(context).toRegister();
               },
               child: Text(
                 AppLocalizations.of(context)!.translate('registration_text')!.toUpperCase(),
