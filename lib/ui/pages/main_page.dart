@@ -1,7 +1,7 @@
+import 'package:be_finance_app/ui/widgets/bottom_navigation_widget/bottom_navigation_widget.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,6 +9,7 @@ class MainPage extends StatelessWidget {
       body: Center(
         child: Text("dddd"),
       ),
+      bottomNavigationBar: BottomNavigationWidget(),
     );
   }
 }
