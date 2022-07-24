@@ -1,4 +1,4 @@
-import 'package:be_finance_app/ui/views/initial%20view/change_language_view.dart';
+import 'package:be_finance_app/ui/views/start%20view/change_language_view.dart';
 import 'package:flutter/material.dart';
 
 class InitialPage extends StatelessWidget {
@@ -7,7 +7,7 @@ class InitialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ChangeLanguageView()
+      body: SafeArea(child: ChangeLanguageView())
     );
   }
 }

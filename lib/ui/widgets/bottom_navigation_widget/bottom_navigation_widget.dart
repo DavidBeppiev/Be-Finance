@@ -1,5 +1,7 @@
+import 'package:be_finance_app/bloc/main_page_navigation_cubit/main_page_navigation_cubit.dart';
 import 'package:be_finance_app/data/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
@@ -32,14 +34,28 @@ Widget BottomNavigationWidget() {
       selectedItemColor: snakeShape == SnakeShape.indicator ? selectedColor : null,
       unselectedItemColor: unselectedColor,
       backgroundColor: AllColors.secondaryColor.withOpacity(0.5),
-
       showUnselectedLabels: showUnselectedLabels,
       showSelectedLabels: showSelectedLabels,
-
       currentIndex: _selectedItemPosition,
-
-      onTap: (index) => setState(() => _selectedItemPosition = index),
-
+      onTap: (index) {
+        setState(() => _selectedItemPosition = index);
+        switch (index) {
+          case 0:
+            BlocProvider.of<MainPageNavigationCubit>(context).toMain();
+            break;
+          case 1:
+            BlocProvider.of<MainPageNavigationCubit>(context).toCategories();
+            break;
+          case 2:
+            BlocProvider.of<MainPageNavigationCubit>(context).toReport();
+            break;
+          case 3:
+            BlocProvider.of<MainPageNavigationCubit>(context).toProfile();
+            break;
+          default:
+            BlocProvider.of<MainPageNavigationCubit>(context).toMain();
+        }
+      },
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home)),
         BottomNavigationBarItem(icon: Icon(Icons.category)),
