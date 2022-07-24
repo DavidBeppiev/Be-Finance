@@ -22,4 +22,12 @@ abstract class AllStyles {
     color: AllColors.secondaryColor,
     fontFamily: 'Main'
   );
+
+  static const TextStyle logoTitleStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 23,
+    color: AllColors.mainColor,
+    letterSpacing: 2.0,
+    fontFamily: 'Tagline'
+  );
 }

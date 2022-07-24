@@ -6,8 +6,8 @@ part 'main_page_navigation_state.dart';
 class MainPageNavigationCubit extends Cubit<MainPageNavigationState> {
   MainPageNavigationCubit() : super(MainState());
 
-  void toCategories () => emit(CatecoriesState());
-  void toProfile () => emit(ProfileState());
-  void toReport () => emit(ReportState());
   void toMain () => emit(MainState());
+  void toOperations () => emit(OperationsState());
+  void toReport () => emit(ReportState());
+  void toProfile () => emit(ProfileState());
 }

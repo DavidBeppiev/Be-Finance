@@ -8,13 +8,13 @@ import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 Widget BottomNavigationWidget() {
   SnakeBarBehaviour snakeBarStyle = SnakeBarBehaviour.floating;
 
-  SnakeShape snakeShape = SnakeShape.circle;
+  SnakeShape snakeShape = SnakeShape.rectangle;
 
   ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(25)),
+    borderRadius: BorderRadius.all(Radius.circular(10)),
   );
 
-  EdgeInsets padding = const EdgeInsets.all(12);
+  EdgeInsets padding = const EdgeInsets.all(5);
 
   bool showSelectedLabels = false;
   bool showUnselectedLabels = false;
@@ -44,7 +44,7 @@ Widget BottomNavigationWidget() {
             BlocProvider.of<MainPageNavigationCubit>(context).toMain();
             break;
           case 1:
-            BlocProvider.of<MainPageNavigationCubit>(context).toCategories();
+            BlocProvider.of<MainPageNavigationCubit>(context).toOperations();
             break;
           case 2:
             BlocProvider.of<MainPageNavigationCubit>(context).toReport();
@@ -57,10 +57,10 @@ Widget BottomNavigationWidget() {
         }
       },
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home)),
-        BottomNavigationBarItem(icon: Icon(Icons.category)),
-        BottomNavigationBarItem(icon: Icon(Icons.report)),
-        BottomNavigationBarItem(icon: Icon(Icons.person)),
+        BottomNavigationBarItem(icon: Icon(Icons.home)), // main
+        BottomNavigationBarItem(icon: Icon(Icons.history, size: 27.0,)), // operations
+        BottomNavigationBarItem(icon: Icon(Icons.inventory_outlined)), // report
+        BottomNavigationBarItem(icon: Icon(Icons.person)), // profile
       ],
       selectedLabelStyle: const TextStyle(fontSize: 14),
       unselectedLabelStyle: const TextStyle(fontSize: 10),

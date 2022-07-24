@@ -5,7 +5,7 @@ abstract class MainPageNavigationState {}
 
 class MainState extends MainPageNavigationState {}
 
-class CatecoriesState extends MainPageNavigationState {}
+class OperationsState extends MainPageNavigationState {}
 
 class ReportState extends MainPageNavigationState {}
 
