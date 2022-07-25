@@ -1,4 +1,5 @@
 import 'package:be_finance_app/data/constants/colors.dart';
+import 'package:be_finance_app/ui/widgets/charts_widget/chart_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -37,7 +38,7 @@ class ProfileView extends StatelessWidget {
           width: double.infinity,
           height: 300,
           color: Colors.grey,
-          child: Text('Charts'),
+          child: DateTimeComboLinePointChart([]),
         )
       ],
     ));
