@@ -33,12 +33,12 @@ class ProfileView extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 25.0,),
+        const SizedBox(height: 25.0,),
         Container(
           width: double.infinity,
           height: 300,
-          color: Colors.grey,
-          child: DateTimeComboLinePointChart([]),
+          color: AllColors.secondaryColor,
+          child: DateTimeComboLinePointChart(),
         )
       ],
     ));

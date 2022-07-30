@@ -27,28 +27,28 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 
 class DateTimeComboLinePointChart extends StatelessWidget {
-  final List<charts.Series<dynamic, DateTime>> seriesList;
-  final bool? animate;
+  // final List<charts.Series<dynamic, DateTime>> seriesList;
+  // final bool? animate;
 
-  const DateTimeComboLinePointChart(this.seriesList, {this.animate, Key? key})
-      : super(key: key);
+  // const DateTimeComboLinePointChart(this.seriesList, {this.animate, Key? key})
+  //     : super(key: key);
 
   /// Creates a [TimeSeriesChart] with sample data and no transition.
-  factory DateTimeComboLinePointChart.withSampleData() {
-    return DateTimeComboLinePointChart(
-      _createSampleData(),
-      // Disable animations for image tests.
-      animate: false,
-    );
-  }
+  // factory DateTimeComboLinePointChart.withSampleData() {
+  //   return DateTimeComboLinePointChart(
+  //     _createSampleData(),
+  //     // Disable animations for image tests.
+  //     animate: false,
+  //   );
+  // }
 
   // EXCLUDE_FROM_GALLERY_DOCS_START
   // This section is excluded from being copied to the gallery.
   // It is used for creating random series data to demonstrate animation in
   // the example app only.
-  factory DateTimeComboLinePointChart.withRandomData() {
-    return DateTimeComboLinePointChart(_createRandomData());
-  }
+  // factory DateTimeComboLinePointChart.withRandomData() {
+  //   return DateTimeComboLinePointChart(_createRandomData());
+  // }
 
   /// Create random data.
   static List<charts.Series<TimeSeriesSales, DateTime>> _createRandomData() {
@@ -69,32 +69,32 @@ class DateTimeComboLinePointChart extends StatelessWidget {
     ];
 
     final mobileSalesData = [
-      TimeSeriesSales(DateTime(2017, 9, 19), tableSalesData[0].sales),
-      TimeSeriesSales(DateTime(2017, 9, 26), tableSalesData[1].sales),
-      TimeSeriesSales(DateTime(2017, 10, 3), tableSalesData[2].sales),
-      TimeSeriesSales(DateTime(2017, 10, 10), tableSalesData[3].sales),
+      TimeSeriesSales(DateTime(2017, 9, 19), tableSalesData[0].money),
+      TimeSeriesSales(DateTime(2017, 9, 26), tableSalesData[1].money),
+      TimeSeriesSales(DateTime(2017, 10, 3), tableSalesData[2].money),
+      TimeSeriesSales(DateTime(2017, 10, 10), tableSalesData[3].money),
     ];
 
     return [
       charts.Series<TimeSeriesSales, DateTime>(
         id: 'Desktop',
         colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
-        domainFn: (TimeSeriesSales sales, _) => sales.time,
-        measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        domainFn: (TimeSeriesSales money, _) => money.time,
+        measureFn: (TimeSeriesSales money, _) => money.money,
         data: desktopSalesData,
       ),
       charts.Series<TimeSeriesSales, DateTime>(
         id: 'Tablet',
         colorFn: (_, __) => charts.MaterialPalette.red.shadeDefault,
-        domainFn: (TimeSeriesSales sales, _) => sales.time,
-        measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        domainFn: (TimeSeriesSales money, _) => money.time,
+        measureFn: (TimeSeriesSales money, _) => money.money,
         data: tableSalesData,
       ),
       charts.Series<TimeSeriesSales, DateTime>(
           id: 'Mobile',
           colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
-          domainFn: (TimeSeriesSales sales, _) => sales.time,
-          measureFn: (TimeSeriesSales sales, _) => sales.sales,
+          domainFn: (TimeSeriesSales money, _) => money.time,
+          measureFn: (TimeSeriesSales money, _) => money.money,
           data: mobileSalesData)
       // Configure our custom point renderer for this series.
         ..setAttribute(charts.rendererIdKey, 'customPoint'),
@@ -105,8 +105,8 @@ class DateTimeComboLinePointChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return charts.TimeSeriesChart(
-      seriesList,
-      animate: animate,
+      _createRandomData(),
+      animate: false,
       // Configure the default renderer as a line renderer. This will be used
       // for any series that does not define a rendererIdKey.
       //
@@ -152,22 +152,22 @@ class DateTimeComboLinePointChart extends StatelessWidget {
       charts.Series<TimeSeriesSales, DateTime>(
         id: 'Desktop',
         colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
-        domainFn: (TimeSeriesSales sales, _) => sales.time,
-        measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        domainFn: (TimeSeriesSales money, _) => money.time,
+        measureFn: (TimeSeriesSales money, _) => money.money,
         data: desktopSalesData,
       ),
       charts.Series<TimeSeriesSales, DateTime>(
         id: 'Tablet',
         colorFn: (_, __) => charts.MaterialPalette.red.shadeDefault,
-        domainFn: (TimeSeriesSales sales, _) => sales.time,
-        measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        domainFn: (TimeSeriesSales money, _) => money.time,
+        measureFn: (TimeSeriesSales money, _) => money.money,
         data: tableSalesData,
       ),
       charts.Series<TimeSeriesSales, DateTime>(
           id: 'Mobile',
           colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
-          domainFn: (TimeSeriesSales sales, _) => sales.time,
-          measureFn: (TimeSeriesSales sales, _) => sales.sales,
+          domainFn: (TimeSeriesSales money, _) => money.time,
+          measureFn: (TimeSeriesSales money, _) => money.money,
           data: mobileSalesData)
       // Configure our custom point renderer for this series.
         ..setAttribute(charts.rendererIdKey, 'customPoint'),
@@ -178,7 +178,7 @@ class DateTimeComboLinePointChart extends StatelessWidget {
 /// Sample time series data type.
 class TimeSeriesSales {
   final DateTime time;
-  final int sales;
+  final int money;
 
-  TimeSeriesSales(this.time, this.sales);
+  TimeSeriesSales(this.time, this.money);
 }
