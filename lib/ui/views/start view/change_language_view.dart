@@ -17,7 +17,7 @@ class ChangeLanguageView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(
-              'assets/images/logo_transparent.png',
+              'assets/images/pi_logo_transparent.png',
             ),
             Text(
               AppLocalizations.of(context)!.translate('change_language')!.toUpperCase(),

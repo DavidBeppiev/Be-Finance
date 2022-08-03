@@ -16,7 +16,7 @@ class RegistrationView extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(
-                'assets/images/logo_transparent.png',
+                'assets/images/pi_logo_transparent.png',
               ),
               Column(
                 children: [

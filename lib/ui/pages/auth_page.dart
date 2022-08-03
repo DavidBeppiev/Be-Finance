@@ -31,7 +31,7 @@ class AuthPage extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(children: [
                       Image.asset(
-                        'assets/images/logo_transparent.png',
+                        'assets/images/pi_logo_transparent.png',
                       ),
                       BlocListener<AuthNavigationViewsCubit, AuthNavigationViewsState>(
                         listener: (context, state) {

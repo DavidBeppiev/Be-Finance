@@ -1,6 +1,9 @@
+import 'package:be_finance_app/bloc/profile_image_cubit/profile_image_cubit.dart';
+import 'package:be_finance_app/bloc/profile_image_cubit/profile_image_cubit.dart';
 import 'package:be_finance_app/data/constants/colors.dart';
 import 'package:be_finance_app/ui/widgets/charts_widget/chart_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -9,38 +12,54 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
-              children: const [
-                CircleAvatar(
-                  radius: 30.0,
-                  backgroundImage: AssetImage('assets/images/no_image.png'),
-                  backgroundColor: Colors.grey,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        BlocProvider.of<ProfileImageCubit>(context).setImage();
+                      },
+                      child: BlocBuilder<ProfileImageCubit, ProfileImageState>(
+                        builder: (context, state) {
+                          if(state is ProfileImageInitial) {
+                            return CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage:
+                                state.image.path == 'assets/images/pi_no_image.png'
+                                    ? AssetImage(state.image.path)
+                                    : FileImage(state.image) as ImageProvider,
+                                backgroundColor: Colors.grey,
+                             );
+                          }
+                          return SizedBox();
+                        }
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20.0,
+                    ),
+                    const Text('name', style: TextStyle(color: AllColors
+                        .secondaryColor)),
+                  ],
                 ),
-                SizedBox(
-                  width: 20.0,
-                ),
-                Text('name', style: TextStyle(color: AllColors.secondaryColor)),
+                const Icon(
+                  Icons.exit_to_app,
+                  color: AllColors.secondaryColor,
+                )
               ],
             ),
-            const Icon(
-              Icons.exit_to_app,
+            const SizedBox(height: 25.0,),
+            Container(
+              width: double.infinity,
+              height: 300,
               color: AllColors.secondaryColor,
+              child: DateTimeComboLinePointChart(),
             )
           ],
-        ),
-        const SizedBox(height: 25.0,),
-        Container(
-          width: double.infinity,
-          height: 300,
-          color: AllColors.secondaryColor,
-          child: DateTimeComboLinePointChart(),
-        )
-      ],
-    ));
+        ));
   }
 }
