@@ -1,7 +1,7 @@
 import 'package:be_finance_app/data/constants/text_styles.dart';
 import 'package:be_finance_app/localizations/app_localizations.dart';
 import 'package:be_finance_app/ui/pages/auth_page.dart';
-import 'package:be_finance_app/ui/widgets/change_language_widgets/drop_down_langs.dart';
+import 'package:be_finance_app/ui/widgets/change%20language%20widgets/drop_down_langs.dart';
 import 'package:be_finance_app/ui/widgets/custom%20widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 

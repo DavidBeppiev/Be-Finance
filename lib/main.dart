@@ -2,7 +2,7 @@ import 'package:be_finance_app/bloc/providers.dart';
 import 'package:be_finance_app/bloc/locale_cubit/locale_cubit.dart';
 import 'package:be_finance_app/data/constants/colors.dart';
 import 'package:be_finance_app/localizations/app_localizations_setup.dart';
-import 'package:be_finance_app/ui/pages/initial_page.dart';
+import 'package:be_finance_app/ui/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,7 +34,8 @@ class MyApp extends StatelessWidget {
           supportedLocales: AppLocalizationsSetup.supportedLocales,
           localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
           locale: localeState.locale,
-          home: InitialPage(),
+          // home: InitialPage(),
+            home: MainPage(),
           );
         }
       ),

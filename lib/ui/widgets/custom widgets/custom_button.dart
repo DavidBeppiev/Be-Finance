@@ -26,6 +26,7 @@ class CustomButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
+          borderRadius: BorderRadius.circular(16.0),
           onTap: () {
             fun();
           },

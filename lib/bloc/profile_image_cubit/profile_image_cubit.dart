@@ -12,11 +12,11 @@ class ProfileImageCubit extends Cubit<ProfileImageState> {
   ProfileImageCubit()
       : super(ProfileImageInitial(image: File('assets/images/pi_no_image.png')));
 
-  getImage() {}
-
-  Future setImage() async {
+  Future setImage(int mode) async {
     try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      final image;
+      if (mode == 0) image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      else image = await ImagePicker().pickImage(source: ImageSource.camera);
       if (image == null) {
         emit(ProfileImageInitial(image: File
         ('assets/images/pi_no_image.png')));
@@ -28,4 +28,8 @@ class ProfileImageCubit extends Cubit<ProfileImageState> {
       print('Failed to pick image: $e');
     }
   }
+
+
+  ///TODO FROM SERVER
+  getImage() {}
 }

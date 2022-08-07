@@ -1,7 +1,8 @@
 import 'package:be_finance_app/bloc/profile_image_cubit/profile_image_cubit.dart';
 import 'package:be_finance_app/bloc/profile_image_cubit/profile_image_cubit.dart';
 import 'package:be_finance_app/data/constants/colors.dart';
-import 'package:be_finance_app/ui/widgets/charts_widget/chart_widget.dart';
+import 'package:be_finance_app/ui/widgets/profile%20view%20widgets/bottom_sheet_widget.dart';
+import 'package:be_finance_app/ui/widgets/profile%20view%20widgets/chart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +22,7 @@ class ProfileView extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        BlocProvider.of<ProfileImageCubit>(context).setImage();
+                        showImageSourceBottomSheet(context);
                       },
                       child: BlocBuilder<ProfileImageCubit, ProfileImageState>(
                         builder: (context, state) {

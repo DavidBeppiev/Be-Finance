@@ -1,10 +1,8 @@
 import 'package:be_finance_app/bloc/Initial_page_cubit/initial_page_cubit.dart';
 import 'package:be_finance_app/bloc/auth_view_navigation_cubit/auth_transition_views_cubit.dart';
-import 'package:be_finance_app/localizations/app_localizations.dart';
 import 'package:be_finance_app/ui/pages/main_page.dart';
 import 'package:be_finance_app/ui/views/auth%20views/login_view.dart';
 import 'package:be_finance_app/ui/views/auth%20views/registration_view.dart';
-import 'package:be_finance_app/ui/widgets/input_widgets/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

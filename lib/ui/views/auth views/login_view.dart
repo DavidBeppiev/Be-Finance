@@ -2,8 +2,8 @@ import 'package:be_finance_app/bloc/Initial_page_cubit/initial_page_cubit.dart';
 import 'package:be_finance_app/data/constants/text_styles.dart';
 import 'package:be_finance_app/bloc/auth_view_navigation_cubit/auth_transition_views_cubit.dart';
 import 'package:be_finance_app/localizations/app_localizations.dart';
+import 'package:be_finance_app/ui/widgets/auth%20page%20widgets/text_form_field_widget.dart';
 import 'package:be_finance_app/ui/widgets/custom%20widgets/custom_button.dart';
-import 'package:be_finance_app/ui/widgets/input_widgets/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
