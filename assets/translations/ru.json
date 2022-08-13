@@ -13,5 +13,8 @@
   "confirm_password_input_text": "Подтвердите пароль",
   "chek_registration_text": "У вас ещё нет аккаунта?",
   "registration_text": "Зарегестрироваться",
-  "login_text": "Войти"
+  "login_text": "Войти",
+
+  "gallery_text": "Галерея",
+  "camera_text": "Камера",
 }

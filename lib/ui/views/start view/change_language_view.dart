@@ -21,7 +21,7 @@ class ChangeLanguageView extends StatelessWidget {
             ),
             Text(
               AppLocalizations.of(context)!.translate('change_language')!.toUpperCase(),
-              style: AllStyles.standartStyle,
+              style: AllStyles.ts_Fs20_CSec_FFMain,
             ),
             Container(margin: const EdgeInsets.only(top: 14), child: DropDownMenuWidget(context)),
             CustomButton(AppLocalizations.of(context)!.translate('further_title')!.toUpperCase(),

@@ -13,5 +13,8 @@
   "confirm_password_input_text": "Bestätigen Sie Ihr Passwort",
   "chek_registration_text": "Haben Sie noch kein Account?",
   "registration_text": "Registrieren",
-  "login_text": "Login"
+  "login_text": "Login",
+
+  "gallery_text": "Galerie",
+  "camera_text": "Kamera"
 }

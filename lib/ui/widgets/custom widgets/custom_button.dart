@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
             fun();
           },
           child: Center(
-            child: Text(text, style: AllStyles.secondaryStyle),
+            child: Text(text, style: AllStyles.ts_Fs23_CMain_FFSecondary),
           ),
         ),
       ),

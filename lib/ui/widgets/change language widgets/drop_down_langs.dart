@@ -31,7 +31,7 @@ Widget DropDownMenuWidget(BuildContext context) {
           )),
       items: _countries.map((countrie) {
         return DropdownMenuItem(
-          child: Text(countrie, style: AllStyles.standartStyle,),
+          child: Text(countrie, style: AllStyles.ts_Fs20_CSec_FFMain,),
           value: countrie,
         );
       }).toList(),

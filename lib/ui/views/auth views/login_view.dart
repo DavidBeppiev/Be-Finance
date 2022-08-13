@@ -40,7 +40,7 @@ class LoginView extends StatelessWidget {
           children: [
             Text(
               AppLocalizations.of(context)!.translate('chek_registration_text')!,
-              style: AllStyles.inputHelperStyle,
+              style: AllStyles.ts_Fs18_CSecondary_FFMain,
             ),
             InkWell(
               onTap: () {
@@ -48,7 +48,7 @@ class LoginView extends StatelessWidget {
               },
               child: Text(
                 AppLocalizations.of(context)!.translate('registration_text')!.toUpperCase(),
-                style: AllStyles.inputHelperStyle,
+                style: AllStyles.ts_Fs18_CSecondary_FFMain,
               ),
             )
           ],

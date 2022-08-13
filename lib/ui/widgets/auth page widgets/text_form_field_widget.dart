@@ -31,9 +31,9 @@ class CustomTextFormField extends StatelessWidget {
                 ),
               ),
               hintText: text,
-              hintStyle: AllStyles.inputHelperStyle,
+              hintStyle: AllStyles.ts_Fs18_CSecondary_FFMain,
           ),
-          style: AllStyles.inputHelperStyle,
+          style: AllStyles.ts_Fs18_CSecondary_FFMain,
         ),
       ),
     );

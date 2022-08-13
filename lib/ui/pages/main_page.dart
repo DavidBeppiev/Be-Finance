@@ -17,7 +17,7 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'BeFinance',
-          style: AllStyles.logoTitleStyle,
+          style: AllStyles.ts_Fs23_CMain_FFTagline,
         ),
         centerTitle: true,
         backgroundColor: AllColors.secondaryColor,

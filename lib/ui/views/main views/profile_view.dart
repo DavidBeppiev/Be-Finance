@@ -1,5 +1,4 @@
 import 'package:be_finance_app/bloc/profile_image_cubit/profile_image_cubit.dart';
-import 'package:be_finance_app/bloc/profile_image_cubit/profile_image_cubit.dart';
 import 'package:be_finance_app/data/constants/colors.dart';
 import 'package:be_finance_app/ui/widgets/profile%20view%20widgets/bottom_sheet_widget.dart';
 import 'package:be_finance_app/ui/widgets/profile%20view%20widgets/chart_widget.dart';
@@ -21,9 +20,8 @@ class ProfileView extends StatelessWidget {
                 Row(
                   children: [
                     InkWell(
-                      onTap: () {
-                        showImageSourceBottomSheet(context);
-                      },
+                      borderRadius: BorderRadius.circular(30.0),
+                      onTap: () => showImageSourceBottomSheet(context),
                       child: BlocBuilder<ProfileImageCubit, ProfileImageState>(
                         builder: (context, state) {
                           if(state is ProfileImageInitial) {
@@ -33,10 +31,10 @@ class ProfileView extends StatelessWidget {
                                 state.image.path == 'assets/images/pi_no_image.png'
                                     ? AssetImage(state.image.path)
                                     : FileImage(state.image) as ImageProvider,
-                                backgroundColor: Colors.grey,
+                                backgroundColor: AllColors.lightGreyColor,
                              );
                           }
-                          return SizedBox();
+                          return const SizedBox();
                         }
                       ),
                     ),
