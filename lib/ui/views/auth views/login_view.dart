@@ -22,19 +22,24 @@ class LoginView extends StatelessWidget {
             CustomTextFormField(
                 AppLocalizations.of(context)!.translate('password_input_text')!,
                 Icons.key),
-            SizedBox(height: 13,),
+            const SizedBox(
+              height: 13,
+            ),
             Container(
               padding: const EdgeInsets.only(top: 10, left: 25, right: 25),
               child: CustomButton(
-                  AppLocalizations.of(context)!.translate('login_text')!.toUpperCase(), () {
+                  AppLocalizations.of(context)!
+                      .translate('login_text')!
+                      .toUpperCase(), () {
                 BlocProvider.of<InitialPageCubit>(context).goToMainPage();
-              }
-              ),
+              }),
             ),
           ],
         ),
-        SizedBox(height: 32,),
-        Divider(),
+        const SizedBox(
+          height: 32,
+        ),
+        const Divider(),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,11 +48,12 @@ class LoginView extends StatelessWidget {
               style: AllStyles.ts_Fs18_CSecondary_FFMain,
             ),
             InkWell(
-              onTap: () {
-                BlocProvider.of<AuthNavigationViewsCubit>(context).toRegister();
-              },
+              onTap: () =>
+                  BlocProvider.of<AuthNavigationViewsCubit>(context).toRegister(),
               child: Text(
-                AppLocalizations.of(context)!.translate('registration_text')!.toUpperCase(),
+                AppLocalizations.of(context)!
+                    .translate('registration_text')!
+                    .toUpperCase(),
                 style: AllStyles.ts_Fs18_CSecondary_FFMain,
               ),
             )

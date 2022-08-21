@@ -17,33 +17,35 @@ class AuthPage extends StatelessWidget {
         },
         child: BlocListener<InitialPageCubit, InitialPageState>(
           listener: (context, state) {
-            if (state is MainPageState)
-              {
-                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-                    MainPage()), (Route<dynamic> route) => false);
-              }
+            if (state is MainPageState) {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => MainPage()),
+                  (Route<dynamic> route) => false);
+            }
           },
           child: Scaffold(
               body: Center(
-                child: SafeArea(
-                  child: SingleChildScrollView(
-                    child: Column(children: [
-                      Image.asset(
-                        'assets/images/pi_logo_transparent.png',
-                      ),
-                      BlocListener<AuthNavigationViewsCubit, AuthNavigationViewsState>(
-                        listener: (context, state) {
-                          if (state is AuthTransitionViewsRegistration) {
-                            Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => RegistrationView()));
-                          }
-                        },
-                        child: LoginView(),
-                      )
-                    ]),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                child: Column(children: [
+                  Image.asset(
+                    'assets/images/pi_logo_transparent.png',
                   ),
-                ),
-              )),
+                  BlocListener<AuthNavigationViewsCubit, AuthNavigationViewsState>(
+                    listener: (context, state) {
+                      if (state is AuthTransitionViewsRegistration) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegistrationView()));
+                      }
+                    },
+                    child: LoginView(),
+                  )
+                ]),
+              ),
+            ),
+          )),
         ));
   }
 }
