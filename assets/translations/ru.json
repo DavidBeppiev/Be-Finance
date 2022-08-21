@@ -16,5 +16,7 @@
   "login_text": "Войти",
 
   "gallery_text": "Галерея",
-  "camera_text": "Камера"
+  "camera_text": "Камера",
+
+  "transactions_text": "Транзакции"
 }

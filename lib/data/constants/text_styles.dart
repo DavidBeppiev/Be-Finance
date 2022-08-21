@@ -28,6 +28,12 @@ abstract class AllStyles {
   static const TextStyle ts_Fs20_CMain_FFSec =
       TextStyle(fontSize: 20, color: AllColors.mainColor, fontFamily: 'Secondary');
 
-  static const TextStyle ts_Fs50_CSecondary_FFNumbers =
-      TextStyle(color: AllColors.secondaryColor, fontSize: 50, fontFamily: 'Numbers');
+  static const TextStyle ts_Fs50_CSecondary_FFNumbers = TextStyle(
+      color: AllColors.secondaryColor, fontSize: 50, fontFamily: 'Numbers');
+
+  static const TextStyle test = TextStyle(
+      color: AllColors.secondaryColor, fontSize: 15, fontFamily: 'Main');
+
+  static const TextStyle test2 = TextStyle(
+      color: AllColors.mainColor, fontSize: 15, fontFamily: 'Numbers');
 }
