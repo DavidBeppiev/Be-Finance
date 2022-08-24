@@ -33,7 +33,7 @@ class WalletWidget extends StatelessWidget {
             ], color: AllColors.mainColor, shape: BoxShape.circle),
             child: const Center(
                 child: Text(
-              '100000',
+              '100 000 \$',
               style: AllStyles.ts_Fs50_CSecondary_FFNumbers,
             )),
           ),

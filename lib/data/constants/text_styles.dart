@@ -31,9 +31,14 @@ abstract class AllStyles {
   static const TextStyle ts_Fs50_CSecondary_FFNumbers = TextStyle(
       color: AllColors.secondaryColor, fontSize: 50, fontFamily: 'Numbers');
 
-  static const TextStyle test = TextStyle(
+  static const TextStyle ts_Fs15_CMain_FFMain = TextStyle(
       color: AllColors.secondaryColor, fontSize: 15, fontFamily: 'Main');
 
-  static const TextStyle test2 = TextStyle(
-      color: AllColors.mainColor, fontSize: 15, fontFamily: 'Numbers');
+  static const TextStyle ts_Fs18_CRed_FFNumbers = TextStyle(
+      color: Colors.red, fontSize: 18, fontFamily: 'Numbers');
+  static const TextStyle ts_Fs18_CGreen_FFNumbers = TextStyle(
+      color: Colors.green, fontSize: 18, fontFamily: 'Numbers');
+
+  static const TextStyle ts_Fs25_CSecondary_FFNumbers = TextStyle(
+      color: AllColors.secondaryColor, fontSize: 25, fontFamily: 'Numbers');
 }
